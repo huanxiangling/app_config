@@ -4,6 +4,6 @@ server:
     context-path: /appdev
 spring:
   application:
-    name: product01
+    name: product
     
     
