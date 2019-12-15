@@ -1,0 +1,45 @@
+#服务器相关配置
+server:
+  servlet:
+    jsp:
+      init-parameters:
+        development: true
+#spring相关配置
+spring:
+  redis:
+    host: 114.55.26.119
+    port: 6379
+    database: 0
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: Root!yk000
+    url: jdbc:mysql://114.55.26.119:3306/app?useSSL=false&serverTimezone=GMT
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 20MB
+#mybatis 相关配置
+mybatis:
+  type-aliases-package: com.baizhi.entity
+  mapper-locations: classpath:com/baizhi/mapper/*Mapper.xml
+#日志
+logging:
+  level:
+   com.baizhi.dao: debug
+
+#配置注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server01:8760/eureka
+#指定自己实例名
+#指定负载均衡策略
+#eureka-product.ribbon:
+#  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.BestAvailableRule
